@@ -1,0 +1,66 @@
+<div id="{{identifier}}" style="margin-top:10;" class="accordion-group row-fluid">
+
+    <div style="overflow:hidden; min-height:50px;background-color:white;" class="accordion-heading">
+        <div class="fluid-row">
+            <div class="span7" style="min-height:45px; max-height:45px;">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
+                   href="#{{identifier}}-body">{{name}}</a>
+            </div>
+            <div class="span1" style="min-height:40px; padding-top:10; padding-right:5;">
+                <div class="csvlabels">{{stimulus_pool}}</div>
+            </div>
+            <div class="span1" style="min-height:40px; padding-top:10; padding-right:5;">
+                {{#if_eq this.ask_recall 1}}
+                    <div class="csvlabels">Recall</div>
+                {{else}}
+                    <div class="csvlabels">Confirmation</div>
+                {{/if_eq}}
+            </div>
+            <div class="span1" style="min-height:40px; padding-top:10; padding-right:5;">
+                <a style="margin:auto;" class="open-participants-modal" data-toggle="modal"
+                   data-projectid="{{identifier}}" href="#participants-modal-view">
+                    <div class="csvlabels">Manage</div>
+                    <img style="margin:4px;display:block;margin:auto;" height="25" width="25" src="http://reflect-esm-dev.lancs.ac.uk/public/img/participant.png"/>
+                    <div class="csvlabels">Participants</div>
+                </a>
+            </div>
+            <div class="span1" style=" min-height:40px; padding-top:10; padding-right:5;">
+                <a data-projectid="{{identifier}}" href="http://reflect-esm-dev.lancs.ac.uk/data/project/survey/stimulusallocations?studyid={{identifier}}">
+                    <div class="csvlabels">Stimulus</div>
+                    <div><img style="margin:4px;display:block;margin:auto;" height="25" width="25" src="http://reflect-esm-dev.lancs.ac.uk/public/img/csv-icon.png"></div>
+                    <div class="csvlabels">Allocations</div>
+                </a>
+            </div>
+            <div class="span1" style=" min-height:40px; padding-top:15; padding-right:5;">
+                <a style="margin:auto;" class="removeProject" data-projectid="{{identifier}}" href="#">
+                    <div class="csvlabels">Delete</div>
+                    <i style="margin:4px;display:block;margin:auto;" class="icon-remove"></i>
+                    <div class="csvlabels">Study</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="{{identifier}}-body" class="accordion-body collapse">
+        <div id="{{identifier}}-content" class="accordion-inner">
+            {{#if this.surveys.length}}
+            {{else}}
+                <div id="noSurveys" style=" font-size:12px">No Surveys Added</div>
+            {{/if}}
+        </div>
+        {{#if_eq this.type "Project" }}
+            <div class="listEntryForm">
+                <form action="javascript:create_survey_click('{{identifier}}')">
+                    <input id="{{identifier}}survey-title" type="input" placeholder="Survey Title..">
+                    <button class="btn"><i class="icon-plus-sign"></i> Create Survey</button>
+                </form>
+            </div>
+        {{else}}
+
+        {{/if_eq}}
+    </div>
+</div>
+
+
+
+
+

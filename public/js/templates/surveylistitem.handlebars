@@ -1,0 +1,134 @@
+<div class="accordion-group" style="margin-bottom:5px;">
+    <div style="overflow:hidden; min-height:40px;background-color:white;" class="accordion-heading">
+        <div class="fluid-row">
+
+            <div class="span9" style=" min-height:40px; padding-top:5; padding-right:5;">
+                <a class="accordion-toggle" data-toggle="collapse" href="#{{identifier}}collapseSurvey">
+                    <div style="font-size:10px">Survey/Trial Name</div>
+                    <div><input type="text" style="min-height: 30px" data-surveyid="{{this.identifier}}" placeholder="{{this.title}}" class="surveyText"/></div>
+
+                </a>
+            </div>
+            <!--div class="span1" style=" min-height:40px; padding-top:5; padding-right:5;">
+                <a data-projectid="{{identifier}}" href="http://reflect-esm-dev.lancs.ac.uk/data/project/survey/completed?survey_type=stimulus&surveyid={{identifier}}">
+                    <div class="csvlabels">Stimulus</div>
+                    <div><img style="margin:4px;display:block;margin:auto;" height="25" width="25" src="http://reflect-esm-dev.lancs.ac.uk/public/img/csv-icon.png"></img></div>
+                    <div class="csvlabels">Pool</div>
+                </a>
+            </div-->
+            <div class="span1" style="min-height:40px; padding-top:5; padding-right:5;">
+                <a data-projectid="{{identifier}}" href="http://reflect-esm-dev.lancs.ac.uk/data/project/schemas?surveyid={{identifier}}">
+                    <div class="csvlabels">Survey/Trial</div>
+                    <div><img style="margin:4px;display:block;margin:auto;" height="25" width="25" src="http://reflect-esm-dev.lancs.ac.uk/public/img/csv-icon.png"></div>
+                    <div class="csvlabels">Schema</div>
+                </a>
+            </div>
+            <div class="span1" style=" min-height:40px; padding-top:5; padding-right:5;">
+                <a data-projectid="{{identifier}}" href="http://reflect-esm-dev.lancs.ac.uk/data/project/survey/completed?survey_type=stimulus&surveyid={{identifier}}">
+                    <div class="csvlabels">Response</div>
+                    <div><img style="margin:4px;display:block;margin:auto;" height="25" width="25" src="http://reflect-esm-dev.lancs.ac.uk/public/img/csv-icon.png"></div>
+                    <div class="csvlabels">Data</div>
+                </a>
+            </div>
+            <div class="span1" style=" min-height:40px; padding-top:5; padding-right:5;">
+                <a data-projectid="{{identifier}}" href="http://reflect-esm-dev.lancs.ac.uk/data/project/survey/stimulusallocations?surveyid={{identifier}}">
+                    <div class="csvlabels">Stimulus</div>
+                    <div><img style="margin:4px;display:block;margin:auto;" height="25" width="25" src="http://reflect-esm-dev.lancs.ac.uk/public/img/csv-icon.png"></div>
+                    <div class="csvlabels">Allocations</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="{{identifier}}collapseSurvey" class="accordion-body collapse" style="height: 0px; ">
+        <div class="accordion-inner">
+            <div class="tabbable">
+                <ul style="margin:0; padding:0; border:0; font-size:smaller;" class="nav nav-tabs" data-tabs="tabs">
+                    <li class="active"><a style="background-color:rgba(255,255,255,0.9);" href="#{{identifier}}questions"  data-toggle="tab">Questions</a></li>
+                    <li ><a style="background-color:rgba(255,255,255,0.9);" href="#{{identifier}}triggers" data-toggle="tab" >Triggers</a></li>
+                </ul>
+
+                <div style="font-size:12px; font-family:HelveticaNeue-Light" class="tab-content">
+                    <div style=" background-color:rgba(255,255,255,0.9); border:5px solid white; border-top-right-radius: 4px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;" class="tab-pane active" id="{{identifier}}questions">
+
+                        <div style="margin-top:0px; padding-top:20;" class="listEntryForm"><a style="font-size:12px ;margin-top:0px;" href="#question-modal-view" data-mode="create" data-surveyid="{{identifier}}" data-id="1234" role="button" class="open-add-question-modal btn primary" data-toggle="modal"><i class="icon-plus-sign"></i> Add Question</a></div>
+                        <div id="{{identifier}}-survey-questions-list">
+                            <ul class="nav nav-pills nav-stacked">
+                                {{#if this.questions.length}}
+                                     {{#each this.questions}}
+                                        <li id="{{identifier}}" style="border-radius:5px; border: 1px solid #C8C8C8; margin:5px; padding:5px; overflow:hidden">
+                                         <div class="row-fluid">
+                                             <div style="text-align:center;background-color:whitesmoke;" class="span1">
+                                                {{formatOrdinal this.ordinal}}
+                                            </div>
+                                            <div style="text-align:center; color:white; background-color:lightgray; margin-left:0px; min-width:50" class="span1">
+                                               {{questionType this.type}}
+                                            </div>
+                                            <div class="span8">
+
+                                                    <a href="#question-modal-view" data-surveyid="{{../../identifier}}" data-questionid="{{this.identifier}}" data-mode="update" data-toggle="modal" class="open-add-question-modal">{{this.question}}</a>
+
+                                            </div>
+                                            <div class="span2">
+                                                <a style="float:right" class="removeQuestion" data-questionid="{{this.identifier}}" href="#"><i class="icon-remove"></i></a>
+
+                                            </div>
+                                        </div>
+
+                                        </li>
+                                     {{/each}}
+                                {{/if}}
+                             </ul>
+                                {{#unless this.questions.length}}
+                                    <div style="margin:15;">No Questions Added</div>
+                                {{/unless}}
+                        </div>
+
+                    </div>
+
+                    <div style=" background-color:rgba(255,255,255,0.9); border:5px solid white; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top-right-radius: 4px; " class="tab-pane" id="{{identifier}}triggers">
+
+                         <div style="margin-top:0px; padding-top:10px;" class="listEntryForm"><a style="font-size:12px" href="#trigger-modal-view" data-surveyid="{{identifier}}" role="button" class="open-trigger-modal btn" data-toggle="modal"><i class="icon-plus-sign"></i> Add Trigger</a></div>
+
+                         <div id="{{identifier}}-survey-triggers-list">
+                             <ul class="nav nav-pills nav-stacked">
+                            {{#if this.triggers.length}}
+                                 {{#each this.triggers}}
+                                    <li id="{{identifier}}" style="border-radius:5px; border: 1px solid #C8C8C8; margin:5px; padding:5px; overflow:hidden">
+
+                                         <div class="row-fluid">
+
+                                         <div class="span1" style="text-align:center; background-color:whitesmoke; margin-right:0; ">
+                                          {{#if this.placename}}
+                                            <i style="margin:auto; margin-top:7px;" class="icon-map-marker"></i>
+                                          {{else}}
+                                            <i style="margin:auto; margin-top:7px;" class="icon-time icon-large"></i>
+                                          {{/if}}
+                                         </div>
+
+                                            <div class="span10" style="">
+                                                {{#if this.placename}}
+                                               <div><a style="" href="#trigger-modal-view" data-surveyid="{{../../identifier}}" data-triggerid="{{this.identifier}}" data-mode="update" data-toggle="modal" class="open-trigger-modal">{{this.placename}}</a></div>
+
+                                               {{else}}
+                                                <div><a id="{{this.identifier}}timelabel" style=" " href="#trigger-modal-view" data-surveyid="{{../../identifier}}" data-triggerid="{{this.identifier}}" data-mode="update" data-toggle="modal" class="open-trigger-modal">{{localTimeFormat this.activation_time}}<span style="padding-left:5em">Interval: {{formatInterval this.interval}}</span></a></div>
+                                                {{/if}}
+                                            </div>
+                                            <div class="span1">
+                                                <a style="float:right" class="removeTrigger" data-trigger="{{this.identifier}}"  href="#"><i class="icon-remove"></i></a>
+                                            </div>
+                                        </div>
+
+                                    </li>
+                                 {{/each}}
+                            {{/if}}
+                             </ul>
+                               {{#unless this.questions.length}}
+                                    <div style="margin:15px;">No Triggers Added</div>
+                               {{/unless}}
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

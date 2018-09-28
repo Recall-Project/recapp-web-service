@@ -1,0 +1,128 @@
+body
+{
+    height:100%;
+    min-height:800px;
+    font-family: helveticaneue-light;
+}
+
+li
+{
+    font-family: helveticaneue-light;
+}
+
+h2, h3
+{
+    font-family:futura;
+}
+
+.navbar, .navbaritem
+{
+    font-family:futura;
+}
+
+.page-header{
+	margin-top:50px;
+}
+
+input {
+    height:50px;
+    padding: 2px;
+    border-radius: 5px;
+    border-style:solid ;
+    border-color: lightgray;
+    font-family:HelveticaNeue-Light;
+}
+
+#radiusSlider { margin: 10px; }
+
+
+.datetimeselector input {
+    height:30px;
+    padding: 2px;
+}
+
+
+a {
+    color:#a9a9a9;
+}
+
+.csvlabels
+{
+    font-family: helveticaneue-light;
+    font-size: 11px;
+    text-align: center;
+}
+
+.projectOptionHeader
+{
+    font-family: helveticaneue-light;
+    font-size: 8px;
+    text-align: center;
+}
+
+
+.post-item {
+	padding: 10px 0 10px 0;
+}
+
+.post-item .span8 {
+	margin-top:20px;
+	border-bottom:1px solid #ccc;
+}
+
+.post-item .span1 a {
+	color:red;
+}
+
+.listEntryForm input
+{
+    width:100%;
+    border-radius: 5px;
+    border-style:solid ;
+    border-color: lightgray;
+    font-family:HelveticaNeue-Light;
+}
+
+
+button
+{
+    margin-top: 2px;
+    font-family:HelveticaNeue-Light;
+}
+
+.listEntryForm
+{
+    margin: 15px;
+}
+
+.modal-body {
+    min-height:100px;
+
+}
+
+.small-input{
+    height:30px;
+    font-size: small;
+}
+
+.secondary-item-content {
+    font-size:5px;
+}
+
+#multioptionsContainer, #likertContainer
+{
+    display: none;
+}
+
+#likertlist li {
+    display:inline-block;
+    *display:inline; /*IE7*/
+    *zoom:1; /*IE7*/
+
+    margin-right:30px;
+}
+
+
+
+
+

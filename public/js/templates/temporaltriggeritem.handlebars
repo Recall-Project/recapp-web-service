@@ -1,0 +1,28 @@
+<li id="{{identifier}}" style="border-radius:5px; border: 1px solid #C8C8C8; margin:5px; padding:5px; overflow:hidden">
+    <div class="row-fluid">
+        <div class="span1" style="text-align:center; background-color:whitesmoke; margin-right:0; ">
+            <i style="margin:auto; margin-top:7px; " class="icon-time icon-large"></i>
+        </div>
+        <div class="span10">
+            <div>
+                <a id="{{this.identifier}}timelabel"
+                   href="#trigger-modal-view"
+                   data-triggerid="{{this.identifier}}"
+                   data-mode="update"
+                   data-toggle="modal"
+                   class="open-trigger-modal">
+                    {{localTimeFormat this.activation_time}}
+                    <span style="padding-left:5em">Interval: {{formatInterval this.interval}}</span>
+                </a>
+            </div>
+        </div>
+        <div class="span1">
+            <a style="float:right" class="removeTrigger" data-trigger="{{this.identifier}}"  href="#"><i class="icon-remove"></i></a>
+        </div>
+    </div>
+</li>
+
+
+
+
+

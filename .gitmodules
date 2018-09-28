@@ -1,0 +1,3 @@
+[submodule "lib/sag"]
+	path = lib/sag
+	url = git://github.com/sbisbee/sag.git

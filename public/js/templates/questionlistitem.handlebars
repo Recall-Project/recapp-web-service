@@ -1,0 +1,26 @@
+<li id="{{identifier}}" style="border-radius:5px; border: 1px solid #C8C8C8; margin:5px; padding:5px; overflow:hidden">
+    <div class="row-fluid">
+        <div style="text-align:center;background-color:whitesmoke;" class="span1">
+            {{formatOrdinal this.ordinal}}
+        </div>
+        <div style="text-align:center; color:white; background-color:lightgray; margin-left:0px; min-width:50" class="span1">
+            {{questionType this.type}}
+        </div>
+        <div class="span8">
+            <!--input type="text"
+                   class="question"
+                   data-surveyid="{{questionSurveyID this.identifier}}"
+                   data-questionid="{{this.identifier}}"
+                   placeholder="{{this.question}}"
+                   >
+            <br--!>
+            <a href="#question-modal-view" data-surveyid="{{questionSurveyID this.identifier}}" data-questionid="{{this.identifier}}" data-mode="update" data-toggle="modal" class="open-add-question-modal">{{this.question}}</a>
+
+        </div>
+        <div class="span2">
+            <a style="float:right" class="removeQuestion" data-questionid="{{this.identifier}}" href="#"><i class="icon-remove"></i></a>
+        </div>
+    </div>
+</li>
+
+
