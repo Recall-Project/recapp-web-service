@@ -20,6 +20,13 @@ define('ADMIN_PASSWORD','PASS_HERE');
 define('ESM_STORE','DB_STORE_HERE');
 define('DB_HOST','HOST_HERE');
 ```
+
+Once the CouchDB database has been initialised the following tw couchdb design documents must be stored that provide custom view and list capabilities:
+```sh
+/couch-documents/statistics-document.js
+/couch-documents/recapp-document.js
+```
+
 #### Javascript
 The hostname of the RECAPP web service must also be configured in the Javascript file:
 ```sh
