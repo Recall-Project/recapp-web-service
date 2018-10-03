@@ -1,4 +1,4 @@
-var hostname = '';
+var hostname = 'HOSTNAME_HERE';
 
 var ErrorHandler = {
 
